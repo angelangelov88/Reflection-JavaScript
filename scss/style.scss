@@ -1,0 +1,22 @@
+@import "variables";
+@import "mixins";
+@import "header";
+@import "navbar";
+@import "main-photo";
+@import "cards";
+@import "culture";
+@import "news-cards";
+@import "client-logos";
+@import "newsletter";
+@import "footer";
+@import "awards";
+@import "carousel";
+@import "cookies";
+@import "menu-bar";
+
+body {
+    font-size: 1rem;
+		font-weight: 400;
+    font-family: "Poppins", "Helvetica", "Arial", sans-serif;
+    letter-spacing: .4px;  
+}

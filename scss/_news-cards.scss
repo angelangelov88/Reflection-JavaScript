@@ -1,0 +1,269 @@
+// NEWS CARDS
+
+//The container for the Latest word on top of the newscards. I added it in order to be able to add margin and keep it with the page alignment
+.news-latest-container {
+	@media only screen and (min-width: $break-m) {
+	width: 739px;
+	margin-left: auto;
+	padding-left: 0px;
+	margin-right: auto;
+}
+	@media only screen and (min-width: $break-l) {
+	width: 950px;
+}
+	@media only screen and (min-width: $break-xl) {
+		max-width: 100%;
+		width: 1200px;
+}
+}
+
+//Styling of Latest
+.news-latest {
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: 600;
+	border-bottom: 6px black solid;	
+	padding-bottom: 20px;
+	width: 90px;
+	margin-left: 10px;
+	margin-top: 40px;
+	display: flex;
+	justify-content: center;
+	@media only screen and (min-width: $break-xl) {
+		margin-left: 30px;
+}
+}
+
+//Newscards container div
+.news-cards-container {
+	background: linear-gradient(to bottom, #F0F0F0, #FFFFFF);
+	padding-top: 3rem;
+	margin-bottom: 2rem;
+	@media only screen and (min-width: $break-m) {
+		display: flex;
+		justify-content: center;
+}
+}
+
+//Newscards content container 
+.news-cards-content {
+	max-width: 100%;
+	font-family: Poppins, sans-serif;
+	@media only screen and (min-width: $break-m) {
+		display: flex;
+		max-width: 1170px;
+}
+}
+
+//Each newscard container div
+.news-card {
+	border: 1px $color-button-gray solid;
+	border-radius: 4px;
+	margin: 1rem 1rem;
+	background-color: white;
+	max-width: 95%;
+	position: relative; // Position relative in order to make the element ancestor of the caption and be able to position the caption absolutely
+	@media only screen and (min-width: $break-s) {
+		width: auto;
+}
+	@media only screen and (min-width: $break-m) {
+		max-width: 350px;
+}
+	@media only screen and (min-width: $break-l) {
+		max-width: 450px;
+		overflow: hidden;
+}
+}
+
+//Image caption styling
+.image-caption-1 {
+	@include image-caption;
+	background-color: $color-news-1;
+}
+
+.image-caption-2 {
+	@include image-caption;
+	background-color: $color-news-2;
+}
+
+.image-caption-3 {
+	@include image-caption;
+	background-color: $color-news-3;
+}
+
+.caption-link {
+	color: white;
+}
+
+.image-caption-1 {
+	background-color: $color-news-1;
+}
+
+.image-caption-2 {
+	background-color: $color-news-2;
+}
+
+.image-caption-1:hover, 
+.image-caption-2:hover, 
+.image-caption-3:hover {
+	text-decoration: underline;
+}
+
+//Code to make sure that news-card-3 is not visible on certain screen sizes and back shown on biggest screens
+.news-card-3 {
+	@media only screen and (min-width: $break-m) {
+		display: none;
+}
+	@media only screen and (min-width: $break-xl) {
+		display: block;
+}
+}
+
+//Image container used to make sure that the photo does not extend outside of its original container on hover
+.img-container {
+	overflow: hidden
+}
+
+//I added the transition property here in order to make the hover effect smooth
+.photo-hiring,
+.photo-hand,
+.photo-rob {
+	width: 100%;
+	transition: all 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+//The effect on hovering over the image
+.photo-rob:hover,
+.photo-hiring:hover,
+.photo-hand:hover {
+	@media only screen and (min-width: $break-l) {
+		transform: scale(1.1);
+		opacity: .7;
+		transition: 0.4s;
+}
+}
+
+//Stylining the title of the newscards
+a.news-1-title {
+	color: $color-news-1;
+	@include news-title-style;
+	@media only screen and (min-width: $break-s) {
+		padding: 0px;
+}
+}
+
+a.news-2-title {
+	color: $color-news-2;
+	@include news-title-style;
+	@media only screen and (min-width: $break-s) {
+		padding: 0px;
+}
+}
+
+a.news-3-title {
+	color: $color-news-3;
+	padding: 30px 0;
+	@include news-title-style;
+}
+
+a.news-1-title:hover,
+a.news-2-title:hover,
+a.news-3-title:hover {
+	text-decoration: underline;
+}
+
+//Styling of the text under the title in the newscards
+.news-text {
+	color: black;
+	padding-left: 30px;
+	padding-right: 30px;
+	font-size: .8125rem;
+	line-height: 1.375rem;
+}
+
+//Styling of the newscard "Read more" button and code to make sure that the buttons are aligned vertically with the other newscards on all screen sizes.
+.btn-news-card-1 {
+	@include button-news-colour;
+	@include btn-cards-newscards;
+	background-color: $color-news-1;
+	@media only screen and (min-width: $break-m) {
+		margin-top: 74px;
+}
+	@media only screen and (min-width: $break-l) {
+		margin-top: 52px;
+}
+	@media only screen and (min-width: $break-xl) {
+		margin-top: 74px;
+}
+}
+
+.btn-news-card-2 {
+	@include button-news-colour;
+	@include btn-cards-newscards;
+	background-color: $color-news-2;
+}
+
+.btn-news-card-3 {
+	@include button-news-colour;
+	@include btn-cards-newscards;
+	background-color: $color-news-3;
+}
+
+.btn-news-card-1:hover {
+	color: white;
+	background-color: darken($color: $color-news-1, $amount: 10%);
+}
+
+.btn-news-card-2:hover {
+	color: white;
+	background-color: darken($color: $color-news-2, $amount: 10%);
+}
+
+.btn-news-card-3:hover {
+	color: white;
+	background-color: darken($color: $color-news-3, $amount: 10%);
+}
+
+//Newscard's date, posted by and image
+.news-card-footer {
+	display: flex;
+	align-items: center;
+	margin: 1rem 0;
+}
+
+.photo-news {
+	margin: 1rem;
+	display: flex;
+}
+
+.photo-news-1 {
+	border-radius: 50%;
+}
+
+.posted-by {
+	color: black;
+	font-weight: 600;
+	font-size: 14px;
+	margin: 0;
+}
+
+.author {
+	padding-top: 1.1rem;
+}
+
+.news-date {
+	color: #666666;
+	font-size: 14px;
+	margin-top: 0;
+}
+
+article h3 {
+	padding-left: 30px;
+	padding-top: 10px;
+}
+
+.news-card hr {
+	text-align: center;
+	margin: 0 auto;
+	width: 80%;
+}

@@ -1,0 +1,126 @@
+//Mixins
+
+@mixin navbar-flexbox-container {
+	display: flex;
+	height: 45px;
+	z-index: 100;
+	margin-left: auto;
+	margin-right: auto;
+	@media screen and (min-width: $break-l) {
+		width: 978px;
+}
+	@media screen and (min-width: $break-xl) {
+		width: 1225px;
+}
+}
+
+@mixin navbar-flexbox-items {
+	margin-top: 7px;
+	padding-top: 5px;
+	display: block;
+}
+	
+@mixin btn {
+	border: none;
+	border-radius: 5px;
+	color: white;
+	padding: 15px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1.2rem;
+	margin: 5px 10px;
+	height: 55px;
+	padding-top: 13px;
+  @media screen and (-ms-high-contrast: none) {
+		padding: 14px 7px;
+}
+}
+
+@mixin menu-btn-basic {
+  background-color: #333645;
+  height: 55px;
+  width: 65px;
+  border-radius: 4px;
+}
+
+@mixin menu-btn-hover {
+	background-color: darken($color: #333645, $amount: 10%)
+}
+
+@mixin btn-cards-newscards {
+	width: 130px;
+	height: 50px;
+}
+
+@mixin cards {
+	border: 1px rgb(187, 187, 187) solid;
+	box-shadow: 0 3px 35px rgba(0, 0, 0, 10%);
+	max-width: 90%;
+	margin: 1rem 0rem;
+	text-align: center;
+	padding: 0.8rem;
+	@media only screen and (min-width: $break-m) {
+		margin: 1rem 1rem;
+}
+}
+
+@mixin news-title-style {
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+@mixin button-news-colour {
+	color: white;
+	margin: 30px;
+	font-weight: 400;
+	font-size: 1rem;
+}
+
+@mixin second-nav-background {
+	width: 100%;
+	height: 45px;
+	position: absolute;
+	left: 0;
+	z-index: 100;
+}
+
+@mixin image-caption {
+	color: white;
+	font-weight: 600;
+	font-size: 0.8rem;
+	padding: 3px 10px;
+	margin: 20px 0 0 370px;
+	position: absolute;
+	top: -.5rem;
+	right: 0rem;
+}
+
+//Mixins for the cards sizes in order to make them appear as they do on the main website
+@mixin m-size-width-first-child {
+	max-width: 720px;
+}
+
+@mixin m-size-width-last-child {
+	max-width: 342px;
+}
+	
+@mixin l-size-width-first-child {
+	max-width: 290px;
+}
+
+@mixin l-size-width-last-child {
+	max-width: 452px;
+	min-width: 452px;
+}
+
+@mixin xl-size-width-first-child {
+	min-width: 355px;
+}
+
+@mixin xl-size-width-last-child {
+	min-width: min-content;
+	@media screen and (-ms-high-contrast: none) {
+		min-width: 200px;
+}	
+	max-width: 258px;
+}

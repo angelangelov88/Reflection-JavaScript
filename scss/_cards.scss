@@ -1,0 +1,450 @@
+// CARDS
+
+//The main container
+.main-cards-container {
+	display: flex;
+	justify-content: center;
+	margin-top: -7rem;
+	@media only screen and (min-width: $break-l) {
+		margin-top: -25px;
+	@media screen and (-ms-high-contrast: none) {
+		display: block;
+		margin: auto;
+		width: 975px;
+}
+}
+	@media only screen and (min-width: $break-xl) {
+		display: block;
+		margin: auto;
+		width: 1168px;
+		margin-top: -25px;
+}
+}
+
+//Content container
+.card {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	border: none;
+	@media only screen and (min-width: $break-l) {
+		padding: 1rem 0.2rem;
+		max-width: 1170px;
+		margin-top: -5.5rem;
+    @media screen and (-ms-high-contrast: none) {
+			max-width: 978px;  			
+}
+		.card-text {
+			font-size: .85rem;
+			line-height: 1.375rem;
+			letter-spacing: 1px;
+}
+}
+	@media only screen and (min-width: $break-xl) {
+		max-width: 1170px;
+		margin-top: -7.5rem;
+    @media screen and (-ms-high-contrast: none) {
+			max-width: 1183px;      
+}
+}
+}
+
+//Text in the cards
+.card-text {
+	margin-bottom: -2rem;
+	min-height: 100px;
+	padding-bottom: 3rem;	
+	font-family: sans-serif;
+	@media only screen and (min-width: $break-s) {
+		padding-bottom: 3rem;
+}
+	@media only screen and (min-width: $break-l) {
+		min-height: 6rem;
+		min-width: initial;
+}
+}
+
+//Card container style
+.card-container {
+	@include cards;
+	width: 90%;
+	@media only screen and (min-width: $break-m) {
+		max-width: 20rem;
+}
+	@media only screen and (min-width: $break-l) {
+		max-width: none;
+		width: auto;
+}
+}
+
+.btn-card {
+	max-width: 12rem;
+	font-size: 1rem;
+	@include btn-cards-newscards;
+	transition: none !important;
+}
+
+//ADJUSTED CONTAINER SIZES DEPENDING ON THE BREAKPOINT
+.software-container, 
+.it-container, 
+.digital-marketing-container {
+	@media only screen and (min-width: $break-m) {
+		@include m-size-width-first-child;
+}
+	@media only screen and (min-width: $break-l) {
+		@include l-size-width-first-child;
+}
+	@media only screen and (min-width: $break-xl) {
+		@include xl-size-width-first-child;
+}
+}
+
+.telecoms-container,
+.web-design-container, 
+.cyber-security-container, 
+.developer-training-container {
+	@media only screen and (min-width: $break-m) {
+		@include m-size-width-last-child;
+}
+	@media only screen and (min-width: $break-l) {
+		@include l-size-width-last-child;
+}
+	@media only screen and (min-width: $break-xl) {
+		@include xl-size-width-last-child;
+}
+}
+
+//CARDS COLOURS
+
+//Software card
+.software-container:hover {
+	background-color: $color-software;
+	color: white; 
+	h3 {
+		color: white;
+}
+	.btn-card-software {
+		background-color: white;
+		color: $color-software;
+		.a-cards-software {
+			color: $color-software;
+}
+}
+	.fa-software-card {
+		color: $color-software;
+		background-color: white;
+		border: 15px white solid;
+}
+	.a-cards-software {
+		color: white;
+}
+}
+
+.a-cards-software {
+	color: black;
+}
+
+.fa-software-card {
+	border-radius: 50%;
+	border: 15px $color-software solid;
+	background-color: $color-software;
+	color: white;
+}
+
+.btn-card-software {
+	color: white;
+	background-color: $color-software;
+	.a-cards-software {
+		color: white;
+}
+}
+
+//IT card
+.it-container:hover {
+	background-color: $color-it;
+	color: white; 
+	h3 {
+		color: white;
+}
+	.btn-card-it {
+		background-color: white;
+		color: $color-it;	
+		.a-cards-it {
+			color: $color-it;
+}
+}
+	.fa-it-card {
+		color: $color-it;
+		background-color: white;
+		border: 15px white solid;
+}
+	.a-cards-it {
+		color: white;	
+}
+}
+
+.a-cards-it {
+	color: black;
+}
+
+.fa-it-card {
+	border-radius: 50%;
+	border: 15px $color-it solid;
+	background-color: $color-it;
+	color: white;
+}
+
+.btn-card-it {
+	color: white;
+	background-color: $color-it;
+	@media only screen and (min-width: $break-l) {
+		margin-top: 27px;
+}
+	@media only screen and (min-width: $break-xl) {
+		margin-top: 5px;
+}
+	.a-cards-it {
+		color: white;
+}
+}
+
+//Digital Marketing card
+.digital-marketing-container:hover {
+	background-color: $color-digital-marketing;
+	color: white; 
+	h3 {
+		color: white;
+}
+	.btn-card-digital-marketing {
+		background-color: white;
+		color: $color-digital-marketing;
+		.a-cards-digital-marketing {
+			color: $color-digital-marketing;
+}
+}
+	.fa-digital-marketing-card {
+		color: $color-digital-marketing;
+		background-color: white;
+		border: 15px white solid;
+}
+	.a-cards-digital-marketing {
+		color: white;
+}
+}
+
+.a-cards-digital-marketing {
+	color: black;
+}
+
+.fa-digital-marketing-card {
+	border-radius: 50%;
+	border: 15px $color-digital-marketing solid;
+	background-color: $color-digital-marketing;
+	color: white;
+}
+
+.btn-card-digital-marketing {
+	color: white;
+	background-color: $color-digital-marketing;
+	.a-cards-digital-marketing {
+		color: white;
+}
+}
+
+//Telecoms card
+.telecoms-container:hover {
+	background-color: $color-telecoms;
+	color: white; 
+	h3 {
+		color: white;
+}
+	.btn-card-telecoms {
+		background-color: white;
+		color: $color-telecoms;
+		.a-cards-telecoms {
+			color: $color-telecoms;
+}
+}
+	.fa-telecoms-card {
+		color: $color-telecoms;
+		background-color: white;
+		border: 15px white solid;
+}
+	.a-cards-telecoms {
+		color: white;
+}
+}
+
+.a-cards-telecoms {
+	color: black;
+}
+
+.fa-telecoms-card {
+	border-radius: 50%;
+	border: 15px $color-telecoms solid;
+	background-color: $color-telecoms;
+	color: white;
+}
+
+.btn-card-telecoms {
+	color: white;
+	background-color: $color-telecoms;
+	.a-cards-telecoms {
+		color: white;
+}
+}
+
+//Web design card
+.web-design-container:hover {
+	background-color: $color-web-design;
+	color: white; 
+	h3 {
+		color: white;
+}
+	.btn-card-web-design {
+		background-color: white;
+		color: $color-web-design;
+		.a-cards-web-design {
+			color: $color-web-design;
+}
+}
+	.fa-web-design-card {
+		color: $color-web-design;
+		background-color: white;
+		border: 15px white solid;
+}
+	.a-cards-web-design {
+		color: white;
+}
+}
+
+.a-cards-web-design {
+	color: black;
+}
+
+.fa-web-design-card {
+	border-radius: 50%;
+	border: 15px $color-web-design solid;
+	background-color: $color-web-design;
+	color: white;
+}
+
+.btn-card-web-design {
+	color: white;
+	background-color: $color-web-design;
+	.a-cards-web-design {
+		color: white;
+}
+}
+
+//Cyber security card
+.cyber-security-container:hover {
+	background-color: $color-cyber-security;
+	color: white; 
+	h3 {
+		color: white;
+}
+	.btn-card-cyber-security {
+		background-color: white;
+		color: $color-cyber-security;
+		.a-cards-cyber-security {
+			color: $color-cyber-security;
+}
+}
+	.fa-cyber-security-card {
+		color: $color-cyber-security;
+		background-color: white;
+		border: 15px white solid;
+}
+	.a-cards-cyber-security {
+		color: white;
+}
+}
+
+.a-cards-cyber-security {
+	color: black;
+}
+
+.fa-cyber-security-card {
+	border-radius: 50%;
+	border: 15px $color-cyber-security solid;
+	background-color: $color-cyber-security;
+	color: white;
+}
+
+.btn-card-cyber-security {
+	color: white;
+	background-color: $color-cyber-security;
+	@media only screen and (min-width: $break-m) {
+		margin-top: 20px;
+}	
+	@media only screen and (min-width: $break-xl) {
+		margin-top: 5px;
+}
+	.a-cards-cyber-security {
+		color: white;
+}
+}
+
+// Developer training card
+.developer-training-container:hover {
+	background-color: $color-web-design;
+	color: white; 
+	h3 {
+		color: white;
+}
+	.btn-card-developer-training {
+		background-color: white;
+		color: $color-web-design;
+		.a-cards-it {
+			color: $color-web-design;
+}
+}
+	.fa-developer-training-card {
+		color: $color-web-design;
+		background-color: white;
+		border: 15px white solid;
+}
+	.a-cards-developer-training {
+		color: white;
+}
+}
+
+.a-cards-developer-training {
+	color: black;
+}
+
+.fa-developer-training-card {
+	border-radius: 50%;
+	border: 15px $color-web-design solid;
+	background-color: $color-web-design;
+	color: white;
+}
+
+.btn-card-developer-training {
+	color: white;
+	background-color: $color-web-design;
+	@media only screen and (min-width: $break-l) {
+		margin-top: 25px;
+}
+	@media only screen and (min-width: $break-xl) {
+		margin-top: 10px;
+}
+	.a-cards-developer-training {
+		color: white;
+}
+}
+
+.dash {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.card h3 {
+	color: black;
+	padding-top: 1rem;
+	font-size: 1.2rem;
+	padding-left: 0;
+	margin-bottom: 0;
+}

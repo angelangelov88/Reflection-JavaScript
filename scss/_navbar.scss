@@ -1,0 +1,272 @@
+//NAVIGATION BAR
+
+//Main navbar container
+.main-navigation {
+  background: #333645;
+  border-bottom: 1px rgb(155, 155, 155) solid;
+  display: none;
+  text-transform: uppercase;
+  max-height: 95px;
+	position: fixed;
+	top: 7rem;
+	z-index: 100;
+	height: 95px;
+	width: 100%;
+	transition: all .3s ease;
+	box-shadow: 0 1px 25px rgba(0,0,0, .1);
+	@media screen and (min-width: $break-l) {
+		display: flex;
+		justify-content: center;
+}
+}
+
+//Added this for the sticky header as JS adds a new div which hides the element
+.main-navigation.hide {
+  top: -128px;
+}
+
+
+//All buttons in the navbar styling
+.btn-navbar {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	background-color: $color-navbar;
+	width: 153px;
+	height: 94px;
+	line-height: 0.3;
+	text-align: center;
+	font-size: 18px;
+	text-transform: uppercase;
+	padding-bottom: 11px;
+	border-bottom: none;
+	border-top: none;
+	border-right: 1px solid hsla(0,0%,100%,.1);
+	border-left: 1px solid rgba(0,0,0,.25);
+  @media screen and (-ms-high-contrast: none) {
+		justify-content: space-around;
+}
+	@media only screen and (min-width: $break-xl ) {
+		width: 194px;
+}
+}
+
+.li-main:first-child {
+	border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+.li-main:last-child {
+	border-right: 1px solid rgba(0,0,0,0.25);
+}
+
+
+//Fixes the position of the menu text in the menu button
+p {
+	margin-top: -5px;
+}
+
+//Navbar container
+.container {
+	display: flex;
+	justify-content: center;
+	min-width: 100%;
+	margin-left: -1rem;
+	background: #333645;
+}
+
+.li-main {
+	display: table-cell;
+}
+
+.li-sub {
+	display: none;
+	font-size: 0.8rem;
+	@media screen and (min-width: $break-xl) {
+		font-size: 16px;
+}	
+}
+
+
+//NAV BAR COLOURS
+
+.web-design:hover {
+	.web-design-ul { //flexbox container
+		@include navbar-flexbox-container;
+		background-color: darken($color: $color-web-design, $amount: 10%);
+}
+//Added this div in order to make the colour of the submenu stay when hovering over it
+	.second-nav-background {
+		@include second-nav-background;
+		background-color: darken($color: $color-web-design, $amount: 10%);
+}
+	.li-web-design { //flexbox items
+		@include navbar-flexbox-items;
+}
+	.dash-2 {
+		display: block;
+}
+	.btn-web-design{
+		background-color: $color-web-design;
+}
+	.fa-code {
+		color: $color-icon;
+}
+}
+
+.it:hover {
+	.it-ul {
+		@include navbar-flexbox-container;
+		background-color: darken($color: $color-it, $amount: 10%);
+}
+	.second-nav-background {
+		@include second-nav-background;
+		background-color: darken($color: $color-it, $amount: 10%);
+}
+	.li-it {
+		@include navbar-flexbox-items;	
+}
+	.dash-2 {
+		display: block;
+}
+	.btn-it{
+		background-color: $color-it;
+}
+	.fa-tv {
+		color: $color-icon;
+}
+}
+
+.telecoms:hover {
+	.telecoms-ul {
+		@include navbar-flexbox-container;
+		background-color: darken($color: $color-telecoms, $amount: 10%);
+}
+	.second-nav-background {
+		@include second-nav-background;
+		background-color: darken($color: $color-telecoms, $amount: 10%);
+}
+	.li-telecoms {
+		@include navbar-flexbox-items;
+}
+	.dash-2 {
+		display: block;
+}
+	.btn-telecoms{
+		background-color: $color-telecoms;
+}
+	.fa-phone-alt {
+		color: $color-icon;
+}
+}
+
+.software:hover {
+	.software-ul {
+		@include navbar-flexbox-container;
+		background-color: darken($color: $color-software, $amount: 10%);
+}
+	.second-nav-background {
+		@include second-nav-background;
+		background-color: darken($color: $color-software, $amount: 10%);
+}
+	.li-software {
+		@include navbar-flexbox-items;
+}
+	.dash-2 {
+		display: block;
+}
+	.btn-software{
+		background-color: $color-software;
+}
+	.fa-th {
+		color: $color-icon;
+}
+}
+
+.digital-marketing:hover {
+	.digital-marketing-ul {
+		@include navbar-flexbox-container;
+		background-color: darken($color: $color-digital-marketing, $amount: 10%);
+}
+	.second-nav-background {
+		@include second-nav-background;
+		background-color: darken($color: $color-digital-marketing, $amount: 10%);
+}
+	.li-digital-marketing {
+		@include navbar-flexbox-items;
+}
+	.dash-2 {
+		display: block;
+}
+	.btn-digital-marketing{
+		background-color: $color-digital-marketing;
+}
+	.fa-signal {
+		color: $color-icon;
+}
+}
+
+.cyber-security:hover {
+	.cyber-security-ul {
+		@include navbar-flexbox-container;
+		background-color: darken($color: $color-cyber-security, $amount: 10%);
+}
+	.second-nav-background {
+		@include second-nav-background;
+		background-color: darken($color: $color-cyber-security, $amount: 10%);
+}
+	.li-cyber-security {
+		@include navbar-flexbox-items;
+}
+	.dash-2 {
+		display: block;
+}
+	.btn-cyber-security {
+		background-color: $color-cyber-security;
+	}
+	.fa-shield-alt {
+		color: $color-icon;
+}
+}
+
+//Colours of the awesome font images
+.fa-code {
+	color: $color-web-design;
+	margin-top: 5px;
+}
+
+.fa-tv {
+	color: $color-it;
+	margin-top: 5px;
+}
+
+.fa-phone-alt {
+	color: $color-telecoms;
+	margin-top: 5px;
+}
+
+.fa-th {
+	color: $color-software;	
+	margin-top: 5px;
+}
+
+.fa-signal {
+	color: $color-digital-marketing;
+	margin-top: 5px;
+}
+
+.fa-shield-alt {
+	color: $color-cyber-security;
+	margin-top: 5px;
+}
+
+.dash-2 {
+	display: none;
+	font-size: 1rem;
+	font-weight: bold;
+	color: white;
+	padding: 8px 17px;
+}
+
+small {
+	font-size: .6rem;
+}
