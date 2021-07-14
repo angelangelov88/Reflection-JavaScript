@@ -1,0 +1,85 @@
+//AWARDS LOGOS
+
+//Awards container
+.awards {
+	display: none;
+	@media only screen and (min-width: $break-m) {
+		display: block;
+}
+}
+
+//Top section of awards logos
+.partners-section {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+	padding: 2rem 0;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+//Code to make the elements smaller for small screens and bigger for big ones
+.partners-section-item {
+	transform: scale(0.8);
+	@media only screen and (min-width: $break-l) {
+		transform: scale(1.1);
+}
+}
+
+//Make the colour logo hidden
+img.colour {
+	display: none;
+}
+
+//Make colour logos visible on hover
+.partners-section-item:hover {
+	img.colour {
+		display: block;
+}
+	img.grey {
+		display: none;
+}
+}
+
+.google {
+	filter: none;
+	cursor: default;
+}
+
+//Bottom section of award logos
+.awards-section {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+	padding: 2rem;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+//Code to make the elements smaller for small screens and bigger for big ones
+.awards-section-item {
+	transform: scale(0.8);
+	@media only screen and (min-width: $break-l) {
+		transform: scale(1.1);
+}
+}	
+
+//Make colour logos visible on hover
+.awards-section-item:hover {
+	img.colour {
+		display: block;
+}
+	img.grey {
+		display: none;
+}
+}
+
+//Code for the Google logo as it was blurry in Chrome
+.google-img {
+	width: 210px;
+	height: 70px;
+	cursor: default;
+	transform: translateZ(0);
+}

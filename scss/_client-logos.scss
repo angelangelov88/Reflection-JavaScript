@@ -1,0 +1,143 @@
+// CLIENT LOGOS
+
+
+.clients-container {
+	background: linear-gradient(to bottom, #F0F0F0, #FFFFFF);
+	display: flex;
+	justify-content: center;
+}
+
+//Content container
+.clients {
+	display: none;
+	padding: 2.5rem 18rem;
+	height: 150px;
+	@media only screen and (min-width: $break-m) {
+		display: flex;
+		justify-content: center;
+		padding: 2.5rem;
+		max-width: 100%;
+}
+}
+
+//Make the colour logos hidden on launch
+img.colour {
+	display: none;
+}
+
+//Each logo styling - with scaling for smaller screens
+.client-logo {
+	transform: scale(0.7);
+	display: flex;
+	flex-basis: auto;
+	margin: 0 -10px;
+	@media only screen and (min-width: $break-m) {
+		margin-left: -1.5rem;
+}
+	@media only screen and (min-width: $break-l) {
+		transform: scale(0.85);
+		margin: 0 15px;
+}
+	@media only screen and (min-width: $break-xl) {
+		transform: scale(1);
+		margin: auto 2rem;
+}
+}
+
+//Changing the image on hover and specific positioning for different screens for the pop-up text 
+.client-logo:hover {
+	img.colour {
+		display: block;
+}
+	img.grey {
+		display: none;
+}
+	.text-holder {
+		visibility: visible;
+}
+	#busseys-text {
+		@media only screen and (min-width: $break-m) {
+			left: -51px;
+			margin-left: -12px;
+}
+		@media only screen and (min-width: $break-l) {
+			margin-left: 21px;
+			@media screen and (-ms-high-contrast: none) {
+				margin-left: 15px;
+}
+}
+		@media only screen and (min-width: $break-xl) {
+			margin-left: 20px;
+}
+}
+	#crane-text {
+		@media only screen and (min-width: $break-l) {
+			margin-left: 7px;
+}
+		@media only screen and (min-width: $break-xl) {
+			margin-left: 15px;
+}
+}
+	#beat-text {
+		margin-left: -127px;
+		@media only screen and (min-width: $break-l) {
+			margin-left: -78px;
+}
+}
+	#diver-text {
+		margin-left: 0px;
+		@media only screen and (min-width: $break-l) {
+			margin-left: 45px;
+}
+}
+}
+
+//Pop-up text holder
+.text-holder {
+	visibility: hidden;
+	width: 350px;
+	background-color: #333645;
+	color: white;
+	text-align: center;
+	padding: 0 1rem;
+	position: absolute;
+	z-index: 1;
+	bottom: 200%;
+	left: 0;
+	margin-left: -35px;
+	font-weight: 400;
+	font-size: 1.3rem; 
+	border: 2px #333645 solid;
+	@media only screen and (min-width: $break-l) {
+		font-size: 0.9rem;
+		bottom: 156%;
+		margin-left: -35px;
+		width: 250px;
+}
+}
+
+.text-holder::after {
+	content: "";
+  position: absolute;
+  top: 100%;
+  left: 35%;
+  margin-left: -5px;
+  border-width: 50px;
+  border-style: solid;
+  border-color: #333645 transparent transparent transparent;
+	@media only screen and (min-width: $break-l) {
+		margin-left: 15px;
+		border-width: 30px;
+		left: 30%;
+}
+}
+
+//Client names/title in the pop-up text holder
+.client-logo-text {
+	text-transform: capitalize;
+	padding: 1rem 0 0 0;
+	font-size: 1.6rem;
+	@media only screen and (min-width: $break-l) {
+		font-size: 1.3rem;
+}
+}

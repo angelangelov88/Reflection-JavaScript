@@ -1,0 +1,65 @@
+// CULTURE PART
+
+//Main brand container and stylining of the background image for bigger screens
+.brand-div {
+	background-color: #333645;
+	@media only screen and (min-width: $break-l) {
+		background-image: url(https://www.netmatters.co.uk/assets/images/branded.png);
+		background-position: 100%;
+		background-repeat: no-repeat;
+		background-size: auto 100%;
+}
+}
+
+//The content div
+.brand-content {
+	color: white;
+	padding: 2rem 1rem;
+	max-width: 100%;
+	line-height: 1.875rem;
+	@media only screen and (min-width: $break-m) {
+		width: 750px;
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 1.1rem;
+		line-height: 2rem;
+}
+	@media only screen and (min-width: $break-l) {
+		padding: 2rem 2rem;
+		font-size: 1.2rem;
+		width: 1000px;
+}
+	@media only screen and (min-width: $break-xl) {
+		width: 1200px;
+}
+}
+
+//Styling of the text
+.brand-text {
+	@media only screen and (min-width: $break-m) {
+		font-size: 16px;
+}
+	@media only screen and (min-width: $break-xl) {
+		max-width: 35rem;
+}
+}
+
+//Our culture button
+.btn-culture {
+	background-color: white;
+	color: rgb(0, 0, 0);
+	font-size: 1.063rem;
+	width: 11rem;
+	border-radius: 3px;
+	margin-left: 0;
+	padding-top: 15px;
+	cursor: pointer; // Added cursor property because otherwise it gets the default from the btn
+}
+
+.btn-culture:hover {
+	background-color: darken($color: white, $amount: 10%);
+}
+
+h2 {
+	text-transform: uppercase;
+}

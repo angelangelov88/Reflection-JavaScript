@@ -1,0 +1,408 @@
+.header-container {
+  height: 10rem;
+  position: fixed;
+  background: #fff;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  transition: all .3s ease;
+  box-shadow: 0 1px 25px rgba(0,0,0, .1);  
+  @media only screen and (min-width: $break-m) {
+    //Moves the search bar and menu button to the right position for Chrome (IE position on line 181 btn-top)
+    display: flex;
+    justify-content: center;
+    height: 8rem;
+}
+  @media only screen and (min-width: $break-l) {
+    //max-width: 92%; //helping for correct positioning
+}
+  @media only screen and (min-width: $break-xl ) {
+    max-width: 100%;
+}
+}
+
+.header-container.hide {
+ top: -10rem;
+@media only screen and (min-width: $break-m ) {
+  top: -128px;
+}
+}
+
+// Extra piece of code for the small screen search bar
+.xs-search {
+  display: flex; //Moved the magnifying glass to the correct position
+  position: relative;
+  top: -1rem; //Positions the search bar
+  max-width: 100%;
+  height: 47px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 2px solid #ccc;
+  border-radius: 2px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  align-items: center;
+  margin: 11px;
+  width: 96%;
+  @media only screen and (min-width: $break-m) {
+    display: none;
+}  
+}
+
+// Styling the input field for small screen 
+.xs-search input[type="search"] {
+  background: none;
+  padding-left: 15px;
+  flex: 1 1 auto;
+  border: none;
+  font-size: 14px;
+  font-family: "Poppins", "Helvetica", "Arial", sans-serif;
+}
+
+.xs-search input[type="search"]:focus {
+  outline: none;
+}
+
+.xs-search input[type="search"]::placeholder {
+  color: rgba(102, 102, 102, 0.75);
+}
+
+.xs-search .fas {
+  font-size: 20px;
+  color: #333645;
+  padding: 0;
+}
+
+.fa-search {
+  cursor: pointer;
+  @media only screen and (min-width: $break-m) {
+    color: white;
+    background-color: $color-button-gray;
+    padding: 20px 16px 16px;
+    margin-left: -9px;
+    height: 3.5rem;
+    width: 3.5rem;    
+    border-radius: 2px;
+    position: relative;
+    top: -0.2rem;
+    left: 7rem;
+}
+  @media only screen and (min-width: $break-l) {
+    position: relative;
+    left: -1.5rem;
+    top: -0.25rem;
+    border-radius: 5px;
+    height: 55px;
+    width: 65px;
+    padding-top: 20px;
+    margin-left: -6px;
+}
+  @media only screen and (min-width: $break-xl) {
+    //color: white;
+    //background-color: $color-button-gray;
+    top: -0.25rem;
+    left: -2.5rem;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    min-width: 65px;
+}
+}
+
+.fa-search:hover {
+  @media only screen and (min-width: $break-m ) { 
+    background-color: darken($color: $color-button-gray, $amount: 10%);
+}
+}
+      
+.top-phone-menu {
+  float: right;
+  margin: 10px 10px 0;
+}
+
+//Phone icon visible only on small screens
+.phone-icon {
+  color: black !important;
+  position: relative;
+  top: 10px;
+  left: -50px;
+  border-bottom: 3px solid transparent;
+  padding-bottom: 7px;
+  margin-right: 1rem;
+//Special code for IE as the position property did not work as intended
+  @media screen and (-ms-high-contrast: none) {
+    top: 0.5rem;
+}
+  @media only screen and (min-width: $break-m) {
+    display: none !important; //important added because IE takes the value from another element and the phone icon stays on bigger screens
+}
+}  
+
+//Mozilla hack to change the position of the phone icon as it did not follow the main rule
+@-moz-document url-prefix() { 
+  .phone-icon {
+    top: 0.5rem !important;
+}
+}
+  
+.phone-icon:hover {
+  border-bottom: 3px solid black;
+} 
+
+//Main container for the buttons in header for screens bigger than S. 
+.btn-top {
+  width: 100%;
+  top: -0.3rem;
+  display: none;
+  @media only screen and (min-width: $break-m) {
+    display: flex;
+    position: relative;
+    top: 0.5rem;  
+    left: -1rem;
+  @media screen and (-ms-high-contrast: none) {
+    left: -10rem;
+}
+}
+  @media only screen and (min-width: $break-l) {
+    left: 0rem;
+    max-width: 33rem;
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      left: 4.55rem;
+}
+}
+  @media only screen and (min-width: $break-xl) {
+    height: 6rem;
+    width: 45rem;
+    position: relative;
+    left: 1rem;
+    max-width: 100%;
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      width: 38rem;
+}
+}
+}
+
+//Menu button for small screens as I could not work out how to use the same element in small screens. I created this workaround and it works well
+.btn-menu-xs {
+  @include menu-btn-basic;
+  position: relative;
+  left: -2px;
+  top: -30px;  
+  @media only screen and (min-width: $break-m ) {
+    display: none;
+}
+}
+
+.btn-menu-xs:hover {
+  @include menu-btn-hover;
+}
+
+//Menu button for all screens but small
+.btn-menu {
+  @include menu-btn-basic;
+  @media only screen and (min-width: $break-m) {
+    position: relative;
+    top: 0.3rem;
+    left: 267px;
+//IE specific code for the position of the menu button
+    @media screen and (-ms-high-contrast: none) {
+      position: absolute;
+      top: 1rem;
+      left: 26rem;
+}
+}
+  @media only screen and (min-width: $break-l) {
+    left: 158px;
+    top: 0.25rem;
+    height: 55px;
+    width: 65px;
+//IE specific code for the position of the menu button
+    @media screen and (-ms-high-contrast: none) {
+      position: relative;
+      top: 0.25rem;
+      left: 10rem;
+}
+}
+  @media only screen and (min-width: $break-xl) {
+    position: relative;
+    top: 4px;    
+    left: 136px;   
+}
+}
+
+//Fix for Firefox as it did not follow the main rule for position
+@-moz-document url-prefix() { 
+  .btn-menu {
+    @media only screen and (min-width: $break-xl) {
+      position: relative;
+      top: 0.25rem;
+      left: 11rem;
+}
+}
+}    
+
+.btn-menu:hover {
+  @include menu-btn-hover;
+}
+
+.menu-lines {
+  padding: 10px 0 4px 16px;
+  @media only screen and (min-width: $break-m) {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 33px;
+  margin: 10px auto 5px;
+}
+}
+
+.menu-line {
+  width: 33px;
+  height: 3px;
+  background-color: #fff;
+  margin-bottom: 5px;
+}
+
+.menu-title {
+  font-size: 12px;
+  text-align: center;
+}
+
+
+//Styling of the 2 buttons in the header
+.btn {
+  @include btn;
+    &-support {
+      background-color: $color-button-blue;
+      display: none;
+      @media only screen and (min-width: $break-l) {
+        display: block;      
+}
+}
+    &-contact {
+      background-color: $color-button-gray;
+      display: none;
+      @media only screen and (min-width: $break-l) {
+        display: block;
+}
+}
+}
+
+//IE issue fixed. There was a box-shadow appearing only on IE
+#btn-top-ie-issue {
+  box-shadow: 10px 10px 10px white;
+}
+
+//Styling of the fa elements in the header buttons - support and contact
+.fa-paper-plane,
+.fa-mouse {
+  display: inline;
+  line-height: 1px;
+  padding-right: 5px;
+}
+
+.btn-support:hover{
+  background-color: darken($color: $color-button-blue, $amount: 10%); 
+  color: white;
+}
+
+.btn-contact:hover{
+  background-color: darken($color: $color-button-gray, $amount: 10%);
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+  
+a:hover {
+  color: white;
+}
+  
+i {
+  color: white;
+}
+
+//Logo and logo container styling
+.netmatters-logo {
+  height: auto;
+  max-width: 45%;
+  position: relative;
+  top: 1rem;
+  width: 375px; 
+  @media only screen and (min-width: $break-m) {
+    max-width: 160%;
+}
+  @media only screen and (min-width: $break-l) {
+    left: 0rem;
+}
+  @media only screen and (min-width: $break-xl) {
+    left: 32px;
+    @media screen and (-ms-high-contrast: none) {
+      left: -15px;
+}
+}
+}
+
+.logo {
+  padding: 15px 0 0 15px;
+  margin-left: .1rem;
+  z-index: 100;
+  @media only screen and (min-width: $break-l) {
+    padding-left: 33px;
+}
+  @media only screen and (min-width: $break-xl) {
+  position: relative;
+  left: -4rem;
+}
+}
+
+//Styling of the input area for all screens but small 
+.form-control {
+    width: 12rem;
+    height: 55px;
+    font-size: 0.9rem;
+    color: $color-button-gray;
+    border: 1px #DCDCDC solid;
+    border-radius: 1%;
+    background-color: white;
+    position: relative;
+    top: -0.15rem;
+    left: 7rem;
+  @media only screen and (min-width: $break-l) {
+    display: none;
+    position: inherit;
+}
+  @media only screen and (min-width: $break-xl) {
+    display: flex;
+    height: 55px;
+    width: 202px;
+    position: relative;
+    left: -2rem;
+    top: -0.25rem;
+}
+}
+
+.form-control:focus {
+  @media only screen and (min-width: $break-m ) {
+    background-color: white;
+    box-shadow: 0px 0px 5px 1px rgba(0,198,255,0.77);
+    border-color: #CCCCCC;
+}
+}
+
+//Fixes the position of most elements in the btn-top area
+.container-search {
+  width: 95%;
+  margin-right: -180px;
+  @media only screen and (min-width: $break-m) {
+    max-width: 300px;
+    margin-left: 2rem;
+}
+  @media only screen and (min-width: $break-l) {
+    max-width: 85px;
+}
+  @media only screen and (min-width: $break-xl) {
+    max-width: 300px;
+}
+}

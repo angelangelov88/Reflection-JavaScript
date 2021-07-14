@@ -1,0 +1,183 @@
+//MAIN PHOTO
+
+//Main photo container 
+.main-photo-container {
+	display: flex;
+	margin-bottom: 25px;
+	position: relative;
+	top: -6rem;
+	@media only screen and (min-width: $break-m) {
+	// position: relative;
+	// top: 0;
+}
+}
+
+//Added the main photo as a background image and styled it. Made it appear on full height on opening the page
+.main-photo {
+	//background-image: url('../img/it-support.png');
+	width: 100%;
+	height: calc(100vh - 4rem);
+	min-height: 650px;
+	background-size: cover;
+	margin-top: 10rem;
+	@media only screen and (min-width: $break-m) {
+		height: calc(100vh - 8rem);
+		margin-top: 14rem;
+}
+	@media only screen and (min-width: $break-l) {
+		height: calc(100vh - 207px);
+		margin-top: 303px;
+}
+}
+.main-photo-1 {
+background-image: url('../img/marketing.jpg');
+}
+
+.main-photo-2 {
+	background-image: url('https://www.netmatters.co.uk/assets/images/thumbnails/full_height_slideshow/home-57sJ.jpg');
+}
+
+.main-photo-3 {
+	background-image: url('https://www.netmatters.co.uk/assets/images/thumbnails/full_height_slideshow/home-5yqm.jpg');
+}
+
+.main-photo-4 {
+	background-image: url('https://www.netmatters.co.uk/assets/images/thumbnails/full_height_slideshow/home-sqvx.jpg');
+}
+
+.main-photo-5 {
+	background-image: url('https://www.netmatters.co.uk/assets/images/thumbnails/full_height_slideshow/home-JQsO.jpg');
+}
+
+.main-photo-6 {
+	background-image: url('https://www.netmatters.co.uk/assets/images/thumbnails/full_height_slideshow/home-lQs1.jpg');
+}
+
+
+//The div that creates the gradient black effect on the image
+.gradient-div {
+	position: absolute;
+	top: 0rem;
+	width: inherit;
+	height: calc(100vh - 4rem);
+	min-height: 650px;
+	background: linear-gradient(to right, rgba(0, 0, 0, 0.85), transparent);
+	margin-top: 10rem;
+	@media only screen and (min-width: $break-m) {
+		top: 0rem;
+		height: calc(100vh - 8rem);
+		//min-height: 563px;
+		margin-top: 14rem;
+}
+	@media only screen and (min-width: $break-l) {
+		top: 0;
+		height: calc(100vh - 207px);
+		min-height: 650px;
+		margin-top: 303px;
+}
+}
+
+//The text block container
+.text-block {
+	text-align: center;
+	color: white;
+	z-index: 0.9;
+	position: relative;
+	top: 33%;
+	@media only screen and (min-width: $break-l) {
+		text-align: left;
+		width: 60%;
+		padding-left: 50px;
+		text-align: left;
+		margin-left: auto;
+		margin-right: auto;
+		width: 60rem;
+}
+	@media only screen and (min-width: $break-xl) {
+		width: 78rem;
+		max-width: 100%;
+}
+}
+
+//Button styling
+.btn-photo {
+	@include btn;
+	background-color: $color-web-design;
+	max-width: 250px;
+	margin-left: 0;
+}
+
+.btn-photo-2 {
+	@include btn;
+	background-color: $color-it;
+	max-width: 250px;
+	margin-left: 0;
+}
+
+.btn-photo-3 {
+	@include btn;
+	background-color: $color-telecoms;
+	max-width: 250px;
+	margin-left: 0;
+}
+
+.btn-photo-4 {
+	@include btn;
+	background-color: $color-software;
+	max-width: 250px;
+	margin-left: 0;
+}
+
+.btn-photo-5 {
+	@include btn;
+	background-color: $color-digital-marketing;
+	max-width: 250px;
+	margin-left: 0;
+}
+
+.btn-photo-6 {
+	@include btn;
+	background-color: $color-cyber-security;
+	max-width: 250px;
+	margin-left: 0;
+}
+
+.btn-photo:hover {
+	background-color: darken($color: $color-web-design, $amount: 10%);
+}
+
+.btn-photo-2:hover {
+	background-color: darken($color: $color-it, $amount: 10%);
+}
+
+.btn-photo-3:hover {
+	background-color: darken($color: $color-telecoms, $amount: 10%);
+}
+
+.btn-photo-4:hover {
+	background-color: darken($color: $color-software, $amount: 10%);
+}
+
+.btn-photo-5:hover {
+	background-color: darken($color: $color-digital-marketing, $amount: 10%);
+}
+
+.btn-photo-6:hover {
+	background-color: darken($color: $color-cyber-security, $amount: 10%);
+}
+
+
+h1 {
+	text-transform: uppercase;
+	font-size: 3.5rem;
+}
+
+h5 {
+	line-height: 2.1rem;
+	padding: 15px 0;
+
+}
+
+.text-block h5 {
+	margin-bottom: 2rem;
+}
