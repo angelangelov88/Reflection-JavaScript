@@ -95,25 +95,53 @@ window.onload = function () {
 }
 
 //Side navbar
+const sidebarContainer = document.getElementById("sidebar-container");
+const sidebarContent = document.getElementById('mySidenav');
 
 function openNav() {
-  document.getElementById("mySidenav").style.width = "334px";
+  //document.getElementById("mySidenav").style.width = "334px";
   //document.body.style.marginRight = "334px";
+
+
+
   //document.getElementsByClassName('container')[0].style.marginRight = '334px';
-  document.getElementsByClassName('header-container')[0].style.marginLeft = '-90px';
-  document.getElementById('sidebar-container').style.display = 'block';
+  //document.getElementsByClassName('header-container')[0].style.marginLeft = '-90px';
+  sidebarContainer.style.display = 'block';
   document.body.style.overflow = 'hidden';
-
-
-
-
 }
 
 function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-  document.body.style.backgroundColor = "white";
+  // sidebarContent.style.width = "0";
+  // document.getElementById("main").style.marginLeft= "0";
+  // document.body.style.backgroundColor = "white";
+
+  sidebarContainer.style.display = 'none';
+  document.body.style.overflow = 'auto';
+
 }
 
+
+//jQuery for the sidebar to disappear when clicked outside of it 
+// $(document).click(function() {
+//   var container = $("#sidebar-container");
+//   if (!container.is(event.target) && !container.has(event.target).length) {
+//       container.hide();
+//   }
+// });
+
+
+// $(document).on('click', function(e) {
+//   var container = $("#sidebar-container");
+//   if (!$(e.target).closest(container).length) {
+//       container.hide();
+//   }
+// });
+
+
+// $(document).mouseup(function (e) {
+//   if ($(e.target).closest("#sidebar-container").length=== 0) {
+//       $("#sidebar-container").hide();
+//   }
+// });
 
 
