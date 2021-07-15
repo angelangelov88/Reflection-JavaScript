@@ -6,15 +6,36 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1000;
+  //display: none;
+
+}
+
+#sidebar-container {
   display: none;
 }
 
-.sidebar-content {
-  //background-color: black;
+.sidebar-container-small {
+  margin-bottom: -10px;
+  margin-top: -9px;
+}
 
-  width: 0;
+//Added this div to make it easier get rid of the sidebar. Now user can click anywhere on the page and the sidenav will disappear
+.blocker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 260px;
+  @media only screen and (min-width: $break-l) {
+    right: 334px;
+
+  }
+
+}
+.sidebar-content {
+  width: 260px;
+
   text-transform: uppercase;
-  //border: 2px red solid;
   padding: 0;
   position: absolute;
   top: 0;
@@ -23,7 +44,10 @@
   z-index: 100;
   max-height: 100vh;
   overflow-y: auto;
+  @media only screen and (min-width: $break-l) {
+    width: 334px;
 
+  }
 
 }
 
@@ -46,9 +70,9 @@ a.sidebar-heading{
 .sidebar-submenu {
   background-color: #262834;
   margin-left: -64px;
-  height: 50px;
+  //height: 50px;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   border-top: 1px solid hsla(0,0%,100%,.05);
   border-bottom: 1px solid rgba(0,0,0,.45);
   font-size: .875rem;
@@ -66,6 +90,10 @@ ul {
   list-style: none;
 }
 
+#ul-sidebar {
+  margin-bottom: 0;
+}
+
 .sidebar-li:hover {
   .sidebar-heading {
     background-color: lighten($color: #262834, $amount: 10);
@@ -75,3 +103,102 @@ ul {
   
 }
 
+.sidebar-content-small {
+  //border: 2px red solid;
+  display: block;
+
+  @media only screen and (min-width: $break-l) {
+    display: none;
+
+
+}
+}
+
+
+.sidebar-nav-button {
+  // font-size: 1.125rem;
+  // padding: 19px 0 18px;
+  // border-radius: 3px;
+  // outline: 1px solid rgba(0,0,0,.25);
+  // border: 1px solid hsla(0,0%,100%,.1);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: auto;
+  width: 85%;
+  line-height: 23px;
+  border-radius: 3px;
+  outline: 1px solid rgba(0,0,0,.25);
+  border: 1px solid hsla(0,0%,100%,.1);
+
+}
+
+.contact-us-sidenbar-btn {
+  margin-top: 10px;
+}
+
+#sidebar-security {
+  margin-bottom: 8px;
+  padding-bottom: 25px;
+
+}
+.ul-sidebar {
+  padding-left: 0;
+margin: 10px 0;
+}
+
+.ul-sidebar li {
+
+  font-size: 1.125rem;
+  padding: 10px 0 ;
+  border-radius: 3px;
+  // outline: 1px solid rgba(0,0,0,.25);
+  // border: 1px solid hsla(0,0%,100%,.1);
+  background-color: #333645;
+  text-align: center;
+}
+.ul-sidebar li:hover {
+  .sidebar-nav-button {
+    background-color: lighten($color: #262834, $amount: 10);
+  }
+}
+.sidebar-submenu-small li {
+  background-color: #262834;
+  // border-top: 1px solid hsla(0,0%,100%,.05);
+  //border-top: 1px solid rgba(0,0,0,.45);
+border-radius: 3px;
+  font-size: 1rem;
+  width: 85%;
+  height: 43px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //border: 1px yellow solid;
+
+}
+
+.sidebar-submenu-small li:not(:first-child)  {
+  border-top: 1px solid rgba(0,0,0,.45);
+  //border-top: 1px solid hsla(0,0%,100%,.05);
+
+}
+
+//Had to add this code in order to have the borders the same as the main website. They are both added on top of the elements and one is on top of the main elements and then on top of the a element 
+.sidebar-submenu-small li:not(:first-child) > a {
+  //border-top: 1px solid rgba(0,0,0,.45);
+  border-top: 1px solid hsla(0,0%,100%,.05);
+  padding-top: 9px;
+  width: 100%;
+  height: 43px;
+}
+
+
+.sidebar-submenu-small {
+  padding-left: 0;
+  padding-top: 20px;
+}
+
+.js-is-hidden {
+	display: none;
+}
