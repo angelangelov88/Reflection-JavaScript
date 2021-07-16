@@ -81,12 +81,13 @@ $(document).ready(function(){
 function PopUp(hideOrshow) {
   if (hideOrshow == 'hide') {
       document.getElementById('ac-wrapper').style.display = "none";
+      document.body.style.overflow = 'visible';
   }
   else  if(localStorage.getItem("popupWasShown") == null) {
       localStorage.setItem("popupWasShown",1);
       document.getElementById('ac-wrapper').removeAttribute('style');
       document.body.style.overflow = 'hidden'; //disables the scroll when the cookie message appear
-  }
+}
 }
 window.onload = function () {
   setTimeout(function () {
@@ -94,54 +95,58 @@ window.onload = function () {
   }, 0);
 }
 
+
 //Side navbar
+//I added variables for all the elements in order to make the code readable
 const sidebarContainer = document.getElementById("sidebar-container");
-const sidebarContent = document.getElementById('mySidenav');
+const headerContainer = document.getElementsByClassName('header-container')[0];
+const mainNav = document.getElementsByClassName('main-navigation')[0];
+const hamburger = document.getElementsByClassName('hamburger')[0];
+const hamburgerXs = document.getElementsByClassName('hamburger-xs')[0];
+const body = document.body;
 
+//This is the function that is triggered on click on burger menu button. I also added if statements for the responsiveness of the screen 
 function openNav() {
-  //document.getElementById("mySidenav").style.width = "334px";
-  //document.body.style.marginRight = "334px";
+  if ( $(window).width() > 992) {
+    body.style.position = 'relative';
+    body.style.right = '317px';
+    mainNav.style.right = '317px';
+    headerContainer.style.right = '317px';
+    sidebarContainer.style.display = 'block';
+    body.style.overflow = 'hidden';
+    hamburger.classList.add("is-active");
+    hamburgerXs.classList.add("is-active");
 
+} else if ($(window).width() > 768) {
+    body.style.position = 'relative';
+    body.style.right = '242px';
+    mainNav.style.right = '242px';
+    headerContainer.style.right = '242px';
+    sidebarContainer.style.display = 'block';
+    body.style.overflow = 'hidden';
+    hamburger.classList.add("is-active");
+    hamburgerXs.classList.add("is-active");
 
-
-  //document.getElementsByClassName('container')[0].style.marginRight = '334px';
-  //document.getElementsByClassName('header-container')[0].style.marginLeft = '-90px';
-  sidebarContainer.style.display = 'block';
-  document.body.style.overflow = 'hidden';
+} else {
+    body.style.position = 'relative';
+    body.style.right = '255px';
+    mainNav.style.right = '255px';
+    headerContainer.style.right = '255px';
+    sidebarContainer.style.display = 'block';
+    body.style.overflow = 'hidden';
+    hamburger.classList.add("is-active");
+    hamburgerXs.classList.add("is-active");
+}
 }
 
+//This is the function that closes the sidebar on clicking anywhere on the page but the sidebar
 function closeNav() {
-  // sidebarContent.style.width = "0";
-  // document.getElementById("main").style.marginLeft= "0";
-  // document.body.style.backgroundColor = "white";
-
-  sidebarContainer.style.display = 'none';
-  document.body.style.overflow = 'auto';
-
+    sidebarContainer.style.display = 'none';
+    body.style.overflow = 'auto';
+    body.style.right = '0';
+    body.style.position = 'unset';
+    mainNav.style.right = '0';
+    headerContainer.style.right = '0';
+    hamburger.classList.remove("is-active");
+    hamburgerXs.classList.remove("is-active");
 }
-
-
-//jQuery for the sidebar to disappear when clicked outside of it 
-// $(document).click(function() {
-//   var container = $("#sidebar-container");
-//   if (!container.is(event.target) && !container.has(event.target).length) {
-//       container.hide();
-//   }
-// });
-
-
-// $(document).on('click', function(e) {
-//   var container = $("#sidebar-container");
-//   if (!$(e.target).closest(container).length) {
-//       container.hide();
-//   }
-// });
-
-
-// $(document).mouseup(function (e) {
-//   if ($(e.target).closest("#sidebar-container").length=== 0) {
-//       $("#sidebar-container").hide();
-//   }
-// });
-
-
