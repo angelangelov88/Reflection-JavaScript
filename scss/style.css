@@ -34,7 +34,7 @@
 .xs-search {
   display: flex;
   position: relative;
-  top: -1rem;
+  top: 1rem;
   max-width: 100%;
   height: 47px;
   background-color: rgba(0, 0, 0, 0.1);
@@ -125,6 +125,11 @@
   float: right;
   margin: 10px 10px 0;
 }
+@-moz-document url-prefix() {
+  .top-phone-menu {
+    margin: -15px 28px 0;
+  }
+}
 
 .phone-icon {
   color: black !important;
@@ -133,7 +138,7 @@
   left: -50px;
   border-bottom: 3px solid transparent;
   padding-bottom: 7px;
-  margin-right: 1rem;
+  margin-right: -38px;
 }
 @media screen and (-ms-high-contrast: none) {
   .phone-icon {
@@ -158,7 +163,7 @@
 .btn-top {
   width: 100%;
   top: -0.3rem;
-  display: none;
+  display: block;
 }
 @media only screen and (min-width: 768px) {
   .btn-top {
@@ -199,47 +204,46 @@
   }
 }
 
-.btn-menu-xs {
+.hamburger-xs {
   background-color: #333645;
   height: 55px;
   width: 65px;
   border-radius: 4px;
-  position: relative;
-  left: -2px;
-  top: -30px;
+  border: none;
 }
 @media only screen and (min-width: 768px) {
-  .btn-menu-xs {
+  .hamburger-xs {
     display: none;
   }
 }
 
-.btn-menu-xs:hover {
-  background-color: #1d1f28;
-}
-
-.btn-menu {
+.hamburger {
+  position: relative;
+  top: 0.3rem;
+  left: 267px;
   background-color: #333645;
   height: 55px;
   width: 65px;
   border-radius: 4px;
+  display: none;
 }
 @media only screen and (min-width: 768px) {
-  .btn-menu {
+  .hamburger {
+    display: block;
     position: relative;
     top: 0.3rem;
     left: 267px;
   }
 }
 @media only screen and (min-width: 768px) and (-ms-high-contrast: none) {
-  .btn-menu {
+  .hamburger {
     position: absolute;
     top: 1rem;
     left: 26rem;
   }
 }
 @media only screen and (min-width: 992px) {
-  .btn-menu {
+  .hamburger {
     left: 158px;
     top: 0.25rem;
     height: 55px;
@@ -247,18 +251,43 @@
   }
 }
 @media only screen and (min-width: 992px) and (-ms-high-contrast: none) {
-  .btn-menu {
+  .hamburger {
     position: relative;
     top: 0.25rem;
     left: 10rem;
   }
 }
 @media only screen and (min-width: 1260px) {
-  .btn-menu {
+  .hamburger {
     position: relative;
     top: 4px;
     left: 136px;
   }
+}
+
+.hamburger:hover {
+  background-color: #1d1f28;
+  opacity: 1;
+}
+
+.hamburger-box {
+  top: 5px;
+  width: 38px;
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  background-color: white;
+  width: 38px;
+}
+
+.hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner::before, .hamburger.is-active .hamburger-inner::after {
+  background-color: white;
+}
+
+.menu-title {
+  color: white;
+  position: relative;
+  top: 6px;
 }
 
 @-moz-document url-prefix() {
@@ -270,30 +299,6 @@
     }
   }
 }
-.btn-menu:hover {
-  background-color: #1d1f28;
-}
-
-.menu-lines {
-  padding: 10px 0 4px 16px;
-}
-@media only screen and (min-width: 768px) {
-  .menu-lines {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    width: 33px;
-    margin: 10px auto 5px;
-  }
-}
-
-.menu-line {
-  width: 33px;
-  height: 3px;
-  background-color: #fff;
-  margin-bottom: 5px;
-}
-
 .menu-title {
   font-size: 12px;
   text-align: center;
@@ -335,8 +340,10 @@
   }
 }
 
-#btn-top-ie-issue {
-  box-shadow: 10px 10px 10px white;
+@media only screen and (min-width: 768px) {
+  #btn-top-ie-issue {
+    box-shadow: 10px 10px 10px white;
+  }
 }
 
 .fa-paper-plane,
@@ -425,6 +432,12 @@ i {
   position: relative;
   top: -0.15rem;
   left: 7rem;
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  .form-control {
+    display: block;
+  }
 }
 @media only screen and (min-width: 992px) {
   .form-control {
@@ -469,6 +482,22 @@ i {
 @media only screen and (min-width: 1260px) {
   .container-search {
     max-width: 300px;
+  }
+}
+
+.d-flex {
+  display: none !important;
+}
+@media only screen and (min-width: 768px) {
+  .d-flex {
+    display: flex !important;
+  }
+}
+
+@-moz-document url-prefix() {
+  .fa-phone-alt::before {
+    position: relative;
+    top: 2.5rem;
   }
 }
 
@@ -2701,6 +2730,19 @@ img.colour {
   background-color: #7e808a;
 }
 
+.blocker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 260px;
+}
+@media only screen and (min-width: 992px) {
+  .blocker {
+    right: 334px;
+  }
+}
+
 .sidebar-container {
   position: fixed;
   top: 0;
@@ -2712,8 +2754,13 @@ img.colour {
   display: none;
 }
 
+.sidebar-container-small {
+  margin-bottom: -10px;
+  margin-top: -9px;
+}
+
 .sidebar-content {
-  width: 0;
+  width: 260px;
   text-transform: uppercase;
   padding: 0;
   position: absolute;
@@ -2722,6 +2769,11 @@ img.colour {
   z-index: 100;
   max-height: 100vh;
   overflow-y: auto;
+}
+@media only screen and (min-width: 992px) {
+  .sidebar-content {
+    width: 334px;
+  }
 }
 
 .sidebar-heading {
@@ -2742,9 +2794,8 @@ a.sidebar-heading {
 .sidebar-submenu {
   background-color: #262834;
   margin-left: -64px;
-  height: 50px;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   border-bottom: 1px solid rgba(0, 0, 0, 0.45);
   font-size: 0.875rem;
@@ -2760,11 +2811,90 @@ ul {
   list-style: none;
 }
 
+#ul-sidebar {
+  margin-bottom: 0;
+}
+
 .sidebar-li:hover {
   cursor: pointer;
 }
 .sidebar-li:hover .sidebar-heading {
   background-color: #3c3f51;
+}
+
+.sidebar-content-small {
+  display: block;
+}
+@media only screen and (min-width: 992px) {
+  .sidebar-content-small {
+    display: none;
+  }
+}
+
+.sidebar-nav-button {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: auto;
+  width: 85%;
+  line-height: 23px;
+  border-radius: 3px;
+  outline: 1px solid rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-us-sidenbar-btn {
+  margin-top: 10px;
+}
+
+#sidebar-security {
+  margin-bottom: 8px;
+  padding-bottom: 25px;
+}
+
+.ul-sidebar {
+  padding-left: 0;
+  margin: 10px 0;
+}
+
+.ul-sidebar li {
+  font-size: 1.125rem;
+  padding: 10px 0;
+  border-radius: 3px;
+  background-color: #333645;
+  text-align: center;
+}
+
+.ul-sidebar li:hover .sidebar-nav-button {
+  background-color: #3c3f51;
+}
+
+.sidebar-submenu-small li {
+  background-color: #262834;
+  border-radius: 3px;
+  font-size: 1rem;
+  width: 85%;
+  height: 43px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-submenu-small li:not(:first-child) {
+  border-top: 1px solid rgba(0, 0, 0, 0.45);
+}
+
+.sidebar-submenu-small li:not(:first-child) > a {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 9px;
+  width: 100%;
+  height: 43px;
+}
+
+.sidebar-submenu-small {
+  padding-left: 0;
+  padding-top: 20px;
 }
 
 body {
