@@ -60,7 +60,7 @@
             <img src="img/netmatters-logo.png" alt="netmatters-logo-picture" class="netmatters-logo"></a>
 <!-- Extra code for the phone icon and menu button for small screens -->
           <div class="top-phone-menu">
-            <a href="tel:01603704020"><i class="fas fa-phone-alt fa-lg phone-icon"></i></a>
+            <a href="tel:01603704020"><i class="fas fa-phone-alt fa-lg" id="phone-alt"></i></a>
             <!-- <div class="btn-menu-xs" onclick="openNav()">
               <a href="#">
                 <div class="menu-lines">
@@ -71,12 +71,12 @@
                     <p class="menu-title">MENU</p>						
               </a>
             </div> -->
-            <button class="hamburger-xs hamburger--spin" type="button" onclick="openNav()">
+            <div class="hamburger-xs hamburger--spin" onclick="openNav()">
               <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
               </span>
               <p class="menu-title">MENU</p>							
-            </button>
+            </div>
           </div>
         </div>
 
@@ -115,12 +115,12 @@
               <p class="menu-title">MENU</p>							
             </a>
           </div> -->
-          <button class="hamburger hamburger--spin" type="button" onclick="openNav()">
+          <div class="hamburger hamburger--spin" onclick="openNav()">
             <span class="hamburger-box">
               <span class="hamburger-inner"></span>
             </span>
             <p class="menu-title">MENU</p>							
-          </button>
+          </div>
         </div>
       </div>
 <!-- Search bar for small screen only
