@@ -116,40 +116,25 @@
       
 .top-phone-menu {
   float: right;
-  margin: 10px 10px 0;
-  @-moz-document url-prefix() { 
-    margin: -15px 28px 0;
-}
+  margin: -14px 10px 0;
 }
 
-//Phone icon visible only on small screens
-.phone-icon {
-  color: black !important;
+#phone-alt {
+  color: black;
   position: relative;
-  top: 10px;
-  left: -50px;
-  border-bottom: 3px solid transparent;
-  padding-bottom: 7px;
-  margin-right: -38px;
-//Special code for IE as the position property did not work as intended
-  @media screen and (-ms-high-contrast: none) {
-    top: 0.5rem;
-}
+  left: -47px;
+  top: 42px;
+  transform: scale(1.2);
+  border-bottom: 3px transparent solid;
+  padding-bottom: 6px;
   @media only screen and (min-width: $break-m) {
-    display: none !important; //important added because IE takes the value from another element and the phone icon stays on bigger screens
+    display: none;
 }
-}  
+}
 
-//Mozilla hack to change the position of the phone icon as it did not follow the main rule
-@-moz-document url-prefix() { 
-  .phone-icon {
-    top: 0.5rem !important;
+#phone-alt:hover {
+  border-bottom: 3px black solid;
 }
-}
-  
-.phone-icon:hover {
-  border-bottom: 3px solid black;
-} 
 
 //Main container for the buttons in header for screens bigger than S. 
 .btn-top {
@@ -245,6 +230,10 @@
 .hamburger-box {
   top: 5px;
   width: 38px;
+  left: 14px;
+  @media only screen and (min-width: $break-m) {
+    left: 0;
+}
 }
 
 .hamburger-inner,  .hamburger-inner::before, .hamburger-inner::after {
@@ -430,106 +419,3 @@ i {
     display: flex !important;
 }
 }
-
-  
-
-//Code to position the phone icon as it was not correctly position in Firefox
-.fa-phone-alt::before {
-  @-moz-document url-prefix() { 
-    position: relative;
-    top: 2.5rem;
-}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .btn-menu:hover {
-//   @include menu-btn-hover;
-// }
-
-// .menu-lines {
-//   padding: 10px 0 4px 16px;
-//   @media only screen and (min-width: $break-m) {
-//   padding: 0;
-//   display: flex;
-//   flex-direction: column;
-//   width: 33px;
-//   margin: 10px auto 5px;
-// }
-// }
-
-// .menu-line {
-//   width: 33px;
-//   height: 3px;
-//   background-color: #fff;
-//   margin-bottom: 5px;
-// }
-
-
-
-
-
-
-
-//Menu button for small screens as I could not work out how to use the same element in small screens. I created this workaround and it works well
-// .btn-menu-xs {
-//   @include menu-btn-basic;
-//   position: relative;
-//   left: -2px;
-//   top: -30px;  
-//   @media only screen and (min-width: $break-m ) {
-//     display: none;
-// }
-// }
-
-// .btn-menu-xs:hover {
-//   @include menu-btn-hover;
-// }
-
-//Menu button for all screens but small
-// .btn-menu {
-//   background-color: #333645;
-//   height: 55px;
-//   width: 65px;
-//   border-radius: 4px;
-//   @media only screen and (min-width: $break-m) {
-//     position: relative;
-//     top: 0.3rem;
-//     left: 267px;
-// //IE specific code for the position of the menu button
-//     @media screen and (-ms-high-contrast: none) {
-//       position: absolute;
-//       top: 1rem;
-//       left: 26rem;
-// }
-// }
-//   @media only screen and (min-width: $break-l) {
-//     left: 158px;
-//     top: 0.25rem;
-//     height: 55px;
-//     width: 65px;
-// //IE specific code for the position of the menu button
-//     @media screen and (-ms-high-contrast: none) {
-//       position: relative;
-//       top: 0.25rem;
-//       left: 10rem;
-// }
-// }
-//   @media only screen and (min-width: $break-xl) {
-//     position: relative;
-//     top: 4px;    
-//     left: 136px;   
-// }
-// }

@@ -123,41 +123,26 @@
 
 .top-phone-menu {
   float: right;
-  margin: 10px 10px 0;
-}
-@-moz-document url-prefix() {
-  .top-phone-menu {
-    margin: -15px 28px 0;
-  }
+  margin: -14px 10px 0;
 }
 
-.phone-icon {
-  color: black !important;
+#phone-alt {
+  color: black;
   position: relative;
-  top: 10px;
-  left: -50px;
-  border-bottom: 3px solid transparent;
-  padding-bottom: 7px;
-  margin-right: -38px;
-}
-@media screen and (-ms-high-contrast: none) {
-  .phone-icon {
-    top: 0.5rem;
-  }
+  left: -47px;
+  top: 42px;
+  transform: scale(1.2);
+  border-bottom: 3px transparent solid;
+  padding-bottom: 6px;
 }
 @media only screen and (min-width: 768px) {
-  .phone-icon {
-    display: none !important;
+  #phone-alt {
+    display: none;
   }
 }
 
-@-moz-document url-prefix() {
-  .phone-icon {
-    top: 0.5rem !important;
-  }
-}
-.phone-icon:hover {
-  border-bottom: 3px solid black;
+#phone-alt:hover {
+  border-bottom: 3px black solid;
 }
 
 .btn-top {
@@ -273,6 +258,12 @@
 .hamburger-box {
   top: 5px;
   width: 38px;
+  left: 14px;
+}
+@media only screen and (min-width: 768px) {
+  .hamburger-box {
+    left: 0;
+  }
 }
 
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
@@ -491,13 +482,6 @@ i {
 @media only screen and (min-width: 768px) {
   .d-flex {
     display: flex !important;
-  }
-}
-
-@-moz-document url-prefix() {
-  .fa-phone-alt::before {
-    position: relative;
-    top: 2.5rem;
   }
 }
 
