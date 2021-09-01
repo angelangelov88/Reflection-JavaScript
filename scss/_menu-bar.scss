@@ -120,6 +120,9 @@ ul {
 .ul-sidebar {
   padding-left: 0;
   margin: 10px 0;
+  transition-duration: 2s;
+  transition-property: display;
+
 }
 
 .ul-sidebar li {
