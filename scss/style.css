@@ -6,7 +6,7 @@
   top: 0;
   width: 100%;
   z-index: 100;
-  transition: all 0.3s ease;
+  transition: all 1s ease;
   box-shadow: 0 1px 25px rgba(0, 0, 0, 0.1);
 }
 @media only screen and (min-width: 768px) {
@@ -496,7 +496,7 @@ i {
   z-index: 100;
   height: 95px;
   width: 100%;
-  transition: all 0.3s ease;
+  transition: all 1s ease;
   box-shadow: 0 1px 25px rgba(0, 0, 0, 0.1);
 }
 @media screen and (min-width: 992px) {
@@ -2720,6 +2720,8 @@ img.colour {
   left: 0;
   bottom: 0;
   right: 260px;
+  transition: 0.5s ease all;
+  overflow-y: hidden;
 }
 @media only screen and (min-width: 992px) {
   .blocker {
@@ -2731,11 +2733,20 @@ img.colour {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  right: -333px;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1000;
   display: none;
+  transition: 0.5s ease all;
+}
+
+.sidebar-container.shown {
+  display: block;
+}
+
+.sidebar-container.slide-in {
+  right: 0;
 }
 
 .sidebar-container-small {
@@ -2753,6 +2764,7 @@ img.colour {
   z-index: 100;
   max-height: 100vh;
   overflow-y: auto;
+  transition: 0.2s ease all;
 }
 @media only screen and (min-width: 992px) {
   .sidebar-content {
@@ -2879,6 +2891,26 @@ ul {
 .sidebar-submenu-small {
   padding-left: 0;
   padding-top: 20px;
+}
+
+body {
+  position: relative;
+  right: 0;
+  transition: 0.5s ease all;
+}
+
+body.slide-in {
+  right: 255px !important;
+}
+@media only screen and (min-width: 768px) {
+  body.slide-in {
+    right: 242px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  body.slide-in {
+    right: 317px;
+  }
 }
 
 body {

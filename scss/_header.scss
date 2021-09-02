@@ -5,7 +5,7 @@
   top: 0;
   width: 100%;
   z-index: 100;
-  transition: all .3s ease;
+  transition: all 1s ease;
   box-shadow: 0 1px 25px rgba(0,0,0, .1);  
   @media only screen and (min-width: $break-m) {
     //Moves the search bar and menu button to the right position for Chrome (IE position on line 181 btn-top)

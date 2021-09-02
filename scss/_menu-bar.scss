@@ -5,20 +5,31 @@
   left: 0;
   bottom: 0;
   right: 260px;
+  transition: .5s ease all;
+  overflow-y: hidden;
   @media only screen and (min-width: $break-l) {
     right: 334px;
 }
 }
 
-.sidebar-container{
+.sidebar-container {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  right: -333px;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1000;
   display: none;
+  transition: .5s ease all;
+}
+
+.sidebar-container.shown {
+  display: block;
+}
+
+.sidebar-container.slide-in {
+  right: 0;
 }
 
 .sidebar-container-small {
@@ -36,6 +47,7 @@
   z-index: 100;
   max-height: 100vh;
   overflow-y: auto;
+  transition: .2s ease all;
   @media only screen and (min-width: $break-l) {
     width: 334px;
 }
@@ -120,9 +132,6 @@ ul {
 .ul-sidebar {
   padding-left: 0;
   margin: 10px 0;
-  transition-duration: 2s;
-  transition-property: display;
-
 }
 
 .ul-sidebar li {
@@ -152,7 +161,6 @@ ul {
 
 .sidebar-submenu-small li:not(:first-child)  {
   border-top: 1px solid rgba(0,0,0,.45);
-
 }
 
 //Had to add this code in order to have the borders the same as the main website. They are both added on top of the elements and one is on top of the main elements and then on top of the a element 
@@ -168,3 +176,18 @@ ul {
   padding-top: 20px;
 }
 
+body {
+  position: relative;
+  right: 0;
+  transition: .5s ease all;
+}
+
+body.slide-in{
+  right: 255px !important;
+  @media only screen and (min-width: $break-m) {
+    right: 242px;
+}
+  @media only screen and (min-width: $break-l) {
+    right: 317px;
+}
+}
